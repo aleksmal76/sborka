@@ -9,32 +9,53 @@
 //var	autoprefixer = require('gulp-autoprefixer');
 //gp=require('gulp-load-plugins')();
 
-global.$={
+global.$ = {
+	patch: {
+		task: require('./gulp/patch/tasks.js')
+	},
 	gulp : require('gulp'),
-	gp : require('gulp-load-plugins')(),
-	pug : require('gulp-pug'),
-	sass : require('gulp-sass'),
-	csso : require('gulp-csso'),
+	del :require('del'),
+	//pug : require('gulp-pug'),
+	//sass : require('gulp-sass'),
+	//csso : require('gulp-csso'),
+	fs: require('fs'),////jsonfile
 	browserSync : require('browser-sync').create(),
-	
-
-	patch:{
-		task:require('./gulp/config/tasks.js')
-	}
+	gp : require('gulp-load-plugins')()
 };
+
 $.patch.task.forEach(function (taskPatch) {
 	require(taskPatch)();
 });
 	
 
-
-
-
-
-
-$.gulp.task('default', $.gulp.series(
-	$.gulp.parallel('pug','sass','scripts'),
-	$.gulp.parallel('watch','serve')
-	
+ $.gulp.task('dev', $.gulp.series(
+	 'clean',
+	$.gulp.parallel('pug','sass','js:copy','svg','img:dev','fonts')
 ));
+
+ $.gulp.task('build', $.gulp.series(
+'clean',
+	 $.gulp.parallel('pug','sass','js:copy','svg','img:build','fonts')
+ ));
+
+$.gulp.task('default', $.gulp.series(//
+	 'dev',
+	 $.gulp.parallel(
+		 'watch',
+		 'serve'
+	 )
+ ));
+
+//$.gulp.task('default', $.gulp.series(//
+	//'dev',
+//$.gulp.parallel('pug', 'sass', 'libsJS:dev','js:copy', 'img:dev', 'svg'),//scripts
+	//$.gulp.parallel('watch','serve')
+	
+//));
+
+//$.gulp.task('build', $.gulp.series(//
+	//$.gulp.parallel('pug', 'sass', 'libsJS:build','js:copy', 'img:build', 'svg'),//scripts
+	//$.gulp.parallel('watch', 'serve')
+
+//));
 

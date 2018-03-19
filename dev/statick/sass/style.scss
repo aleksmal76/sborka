@@ -1,0 +1,53 @@
+
+
+
+body{
+background-color: yellow;
+    width: 100%;
+    height: 50%;
+    //display: flex;
+    
+    display: grid;
+}
+p{
+color:black;
+font-size:20px;
+}
+
+ 
+.div{
+    width:100%;
+    height: 500px;
+    background: blue;
+}
+.wrapper{
+    //display: flex;
+    
+    display: grid;
+    width: 100%;
+    height: 400px;
+    //background: blueviolet;
+}
+a{
+    display: grid;
+    //color: aqua;
+    font-size: 25px;
+}
+ img{
+    width: 100%;
+    height: 400px;
+    
+}
+.menu-list{
+    display:grid; 
+    
+}
+li{
+    display: grid;
+}
+//.icon{
+    //width: 200px;
+    //height: 200px;
+    //margin-top: 40px;
+    //position: absolute;
+//}

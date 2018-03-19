@@ -1,0 +1,35 @@
+
+@import '../sass/_fonts.scss';
+@import '../sass/_libs.scss';
+@import '../sass/variables.scss';
+
+
+
+
+ //Общие стили
+//@import 'comon_styles.scss'
+
+
+
+// Модули
+// Стили шапки 
+@import './modules/header.scss';
+
+//Стили футора/
+@import './modules/footer.scss';
+
+ //Стили меню
+@import './modules/menu.scss';
+
+
+ //СТРАНИЦЫ
+ //Стили главной страницы
+@import './pages/index.scss';
+
+ //ПРОЧЕЕ
+ //Стили медиазапросов
+@import './media.scss';
+
+
+
+

@@ -1,12 +1,24 @@
+//module.exports = function () {
+    //$.gulp.task('serve', function () {
+       // $.browserSync.init({
+            //server: {
+                //baseDir: "./"
+            //}
+        //});
+        //browserSync.watch('dist', browserSync.reload)
+    //});
+
+
+//}
 module.exports = function () {
     $.gulp.task('serve', function () {
         $.browserSync.init({
-            server: {
-                baseDir: "./dist"
-            }
+            server: './build'
+            //open: true,
+            //server: {
+                //baseDir: "./build/"
+            //}
         });
-        //browserSync.watch('dist', browserSync.reload)
+       //$.browserSync.watch('build', $.browserSync.reload)
     });
-
-
-}
+};
