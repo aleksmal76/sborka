@@ -1,12 +1,13 @@
 module.exports=[
-'./gulp/task/pug',
+
 './gulp/task/sass',
 './gulp/task/scripts',
 './gulp/task/serve',
 './gulp/task/watch',
-'./gulp/task/img',
-'./gulp/task/svg',
+'./gulp/task/html',
+'./gulp/task/sprite',
 './gulp/task/fonts',
 './gulp/task/clean',
-'./gulp/task/img'
+'./gulp/task/img',
+'./gulp/task/svg'
 ];

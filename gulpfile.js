@@ -15,7 +15,7 @@ global.$ = {
 	},
 	gulp : require('gulp'),
 	del :require('del'),
-	//pug : require('gulp-pug'),
+	gp: require('posthtml'),
 	//sass : require('gulp-sass'),
 	//csso : require('gulp-csso'),
 	fs: require('fs'),////jsonfile
@@ -30,12 +30,12 @@ $.patch.task.forEach(function (taskPatch) {
 
  $.gulp.task('dev', $.gulp.series(
 	 'clean',
-	$.gulp.parallel('pug','sass','js:copy','svg','img:dev','fonts')
+	 $.gulp.parallel('sass', 'html', 'sprite', 'svg', 'img:dev', 'fonts', 'scripts')//'js:copy',
 ));
 
  $.gulp.task('build', $.gulp.series(
 'clean',
-	 $.gulp.parallel('pug','sass','js:copy','svg','img:build','fonts')
+	 $.gulp.parallel('sass', 'html',  'sprite','svg', 'img:build', 'fonts', 'scripts')
  ));
 
 $.gulp.task('default', $.gulp.series(//

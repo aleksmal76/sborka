@@ -1,8 +1,11 @@
 module.exports = function () {
     $.gulp.task('sass', function () {
         return $.gulp.src('dev/statick/sass/main.scss')
-        //.pipe(sass({
-                //includePaths: require('node-normalize-scss').includePaths
+        .pipe($.gp.sass({
+            includePaths: require('node-normalize-scss').includePaths
+            }))
+            //.pipe($.gp.sass({
+                //'include scss':true
             //}))
             .pipe($.gp.sass({ outputStyle: 'expanded' }))
             
@@ -20,5 +23,7 @@ module.exports = function () {
             }));
     });
 
+    
 
-}
+
+};
